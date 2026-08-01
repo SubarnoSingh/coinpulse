@@ -1,6 +1,9 @@
 import React from 'react'
+import {discoverValidationDepths} from "next/dist/server/app-render/instant-validation/instant-validation";
 
 const Page = () => {
-    return <p className={"text-3xl text-indigo-500"}></p>
+    return <div>
+
+    </div>
 }
 export default Page
