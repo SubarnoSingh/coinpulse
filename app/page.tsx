@@ -1,9 +1,13 @@
-import React from 'react'
-import {discoverValidationDepths} from "next/dist/server/app-render/instant-validation/instant-validation";
-
 const Page = () => {
-    return <div>
+    return <main className={"main-container"}>
+        <section className={"home-grid"}>
+            <p>Coin Overview</p>
+            <p>Trending Coins</p>
+        </section>
 
-    </div>
+        <section className={"w-full mt-7 space-y-4"}>
+            <p>Categories</p>
+        </section>
+    </main>
 }
 export default Page
