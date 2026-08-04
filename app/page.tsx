@@ -1,13 +1,32 @@
-const Page = () => {
-    return <main className={"main-container"}>
-        <section className={"home-grid"}>
-            <p>Coin Overview</p>
-            <p>Trending Coins</p>
-        </section>
+import { Suspense } from "react";
+import CoinOverview from "@/components/home/CoinOverview";
+import TrendingCoins from "@/components/home/TrendingCoins";
+import {
+  CategoriesFallback,
+  CoinOverviewFallback,
+  TrendingCoinsFallback,
+} from "@/components/home/fallback";
 
-        <section className={"w-full mt-7 space-y-4"}>
-            <p>Categories</p>
-        </section>
+const Page = async () => {
+  return (
+    <main className="main-container">
+      <section className="home-grid">
+        <Suspense fallback={<CoinOverviewFallback />}>
+          <CoinOverview />
+        </Suspense>
+
+        <Suspense fallback={<TrendingCoinsFallback />}>
+          <TrendingCoins />
+        </Suspense>
+      </section>
+
+      <section className="w-full mt-7 space-y-4">
+        <Suspense fallback={<CategoriesFallback />}>
+          <p>Categories</p>
+        </Suspense>
+      </section>
     </main>
-}
-export default Page
+  );
+};
+
+export default Page;

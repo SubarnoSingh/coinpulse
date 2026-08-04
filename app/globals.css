@@ -945,7 +945,7 @@
   background: #171a34;
 }
 
-/* Table Custom Scrollbar */
+/* DataTable Custom Scrollbar */
 .custom-scrollbar [data-slot='table-container'] {
   overflow-y: auto;
 }
